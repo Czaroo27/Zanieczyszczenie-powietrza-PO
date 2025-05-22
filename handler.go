@@ -21,7 +21,6 @@ func (h *AirHandler) PostReading(w http.ResponseWriter, r *http.Request) {
         return
     }
 
-    // Walidacja
     if reading.PM25 < 0 || reading.PM10 < 0 || reading.CO < 0 {
         http.Error(w, "Dane muszą być większe od zera", http.StatusBadRequest)
         return
